@@ -1,6 +1,8 @@
 # 🛡️ Rakshak: UPI-Simple Solana — Superteam India Open Design Bounty
 > Redesigning Solana's 5 most stressful wallet moments using the simplicity, safety, and mental models of India's UPI (Google Pay, PhonePe, Paytm), elevated by two memorable signature moments: **"Rakshak Mode" (Hindi/Hinglish + Voice)** and a **10-Second Pre-Broadcast Undo Window**.
 
+🌐 **Live Production Demo:** **[https://solana-upi-redesign.vercel.app](https://solana-upi-redesign.vercel.app)**  
+📦 **GitHub Repository:** **[https://github.com/rudhu29/Solana_App](https://github.com/rudhu29/Solana_App)**  
 Built for **Figma Config Bengaluru** and **Solana Summit India 2026** (Nov 2).
 
 ---
