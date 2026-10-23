@@ -16,10 +16,16 @@ npm start
 ```
 Open **`http://localhost:5173`** in your browser to explore the full interactive experience.
 
-### 🌐 Instant Deployment to Vercel
-This repository includes a pre-configured `vercel.json`. You can deploy this live prototype with zero configuration:
+### 🌐 Instant 1-Click Deployment to Vercel
+This repository is configured with zero-config `vercel.json`. You can deploy it with a single click:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frudhu29%2FSolana_App)
+
+👉 **[Click Here to Deploy Instantly on Vercel](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frudhu29%2FSolana_App)**
+
+Or from the command line:
 ```bash
-npx vercel deploy --prod
+npx vercel --prod
 ```
 
 ---
