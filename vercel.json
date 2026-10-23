@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "name": "solana-upi-redesign",
+  "cleanUrls": true,
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}

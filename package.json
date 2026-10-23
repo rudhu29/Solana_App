@@ -1,0 +1,25 @@
+{
+  "name": "solana-upi-redesign",
+  "version": "1.0.0",
+  "description": "UPI-Simple Solana: Open Design Bounty Submission for Solana Summit India & Figma Config Bengaluru",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "npx -y serve . -p 3000"
+  },
+  "keywords": [
+    "solana",
+    "upi",
+    "phantom",
+    "redesign",
+    "figma-bounty",
+    "solana-summit-india",
+    "web3-ux"
+  ],
+  "author": "Solana Design Bounty Contender",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}
