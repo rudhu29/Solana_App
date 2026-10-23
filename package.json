@@ -4,7 +4,7 @@
   "description": "UPI-Simple Solana: Open Design Bounty Submission for Solana Summit India & Figma Config Bengaluru",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/copy-assets.js",
     "preview": "vite preview",
     "start": "npx -y serve . -p 3000"
   },

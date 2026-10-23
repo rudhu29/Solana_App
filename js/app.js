@@ -1240,6 +1240,26 @@ window.copyFigmaSvgCode = function() {
 };
 
 // ==========================================================================
+// FIGMA SVG EXPORT CONTROLLER
+// ==========================================================================
+window.copyFigmaSvgCode = function() {
+  const svgUrl = 'assets/rakshak_figma_cover.svg';
+  fetch(svgUrl)
+    .then(r => {
+      if (!r.ok) throw new Error('File not found');
+      return r.text();
+    })
+    .then(svgText => {
+      navigator.clipboard.writeText(svgText).then(() => {
+        alert('📋 1920×1080 Figma Cover SVG Code copied to clipboard!\n\nYou can now paste it directly into your Figma canvas.');
+      });
+    })
+    .catch(() => {
+      alert('📋 SVG Download Ready: Tap "Download SVG" to save rakshak_figma_cover.svg and drag it directly into Figma.');
+    });
+};
+
+// ==========================================================================
 // EDGE STATES SIMULATOR CONTROLLER
 // ==========================================================================
 window.setEdgeState = function(stateType, chipEl) {
@@ -1258,35 +1278,55 @@ window.setEdgeState = function(stateType, chipEl) {
 
   if (stateType === 'normal') {
     state.selectedContact = BOUNTY_DATA.contacts[0];
-    state.sendAmountInr = 1000;
-    renderSendForm();
-    alert('Reset to Standard Normal State: Rahul Sharma (1.50 SOL balance)');
+    state.sendAmountInr = 1500;
+    state.balanceSol = 4.82;
+    const amountInput = document.getElementById('sendAmountInput');
+    if (amountInput) amountInput.value = '1500';
+    updateSendAmountSecondary(1500);
+    renderContactsList();
+    renderQuickContactsCarousel();
+    updateBalanceDisplay();
+    const gasToast = document.getElementById('gasErrorToast');
+    if (gasToast) gasToast.remove();
+    alert('✨ Reset to Standard Normal State: Rahul Sharma (1.50 SOL balance, 4.82 SOL net worth)');
   } else if (stateType === 'error_gas') {
-    state.sendAmountInr = 25000;
+    state.balanceSol = 0.000001; // Insufficient for 0.000005 fee
+    updateBalanceDisplay();
+    const existing = document.getElementById('gasErrorToast');
+    if (existing) existing.remove();
     const warning = document.createElement('div');
     warning.id = 'gasErrorToast';
     warning.style.cssText = 'background: rgba(255, 59, 105, 0.15); border: 1px solid var(--risk-danger); color: #FFF; padding: 10px; border-radius: 8px; font-size: 11px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;';
-    warning.innerHTML = '<span>⚠️ Insufficient SOL for network fee (0.000005 SOL needed).</span> <button class="btn btn-secondary" style="padding: 2px 6px; font-size: 10px;" onclick="this.parentElement.remove()">Add ₹50</button>';
-    const form = document.querySelector('.send-form-card');
-    if (form && !document.getElementById('gasErrorToast')) {
+    warning.innerHTML = '<span>⚠️ Insufficient SOL for network fee (0.000005 SOL needed).</span> <button class="btn btn-secondary" style="padding: 2px 6px; font-size: 10px;" onclick="window.setEdgeState(\'normal\', document.getElementById(\'edge-chip-normal\'))">Add ₹50</button>';
+    const form = document.getElementById('fview-send');
+    if (form) {
       form.prepend(warning);
     }
   } else if (stateType === 'empty_wallet') {
-    const list = document.getElementById('contactsScroll');
+    state.balanceSol = 0;
+    updateBalanceDisplay();
+    const list = document.getElementById('contactsPickerGroup');
     if (list) {
-      list.innerHTML = '<div style="font-size: 12px; color: var(--text-tertiary); padding: 12px; width: 100%; text-align: center;">📭 No recent contacts found. Search .sol or scan QR to get started.</div>';
+      list.innerHTML = '<div style="font-size: 12px; color: var(--text-tertiary); padding: 20px; width: 100%; text-align: center;">📭 No recent contacts found. Search .sol handle or scan UPI QR code to get started.</div>';
     }
-    const bal = document.getElementById('walletBalanceInr');
-    if (bal) bal.textContent = '₹0';
+    const carousel = document.getElementById('quickContactsCarousel');
+    if (carousel) {
+      carousel.innerHTML = '<div style="font-size: 11px; color: var(--text-tertiary); padding: 8px 12px;">0 saved contacts</div>';
+    }
   } else if (stateType === 'long_name') {
     state.selectedContact = {
+      id: "c-long",
       name: "Siddharth Narayanaswamy Long Name",
       handle: "siddharth-narayanaswamy-very-long-name.sol",
       avatar: "👨🏽‍🎓",
-      safetyRating: "verified",
-      isFirstTime: true
+      verified: true,
+      badge: "Verified .sol",
+      history: "First-time transfer",
+      riskLevel: "warning"
     };
-    renderSendForm();
+    renderContactsList();
+    renderQuickContactsCarousel();
+    selectContact(state.selectedContact);
   }
 };
 
@@ -1370,3 +1410,10 @@ function renderTourStep(step) {
   }
 }
 
+// Explicit window bindings for global HTML accessibility
+window.switchFeature = switchFeature;
+window.simulatePipeline = simulatePipeline;
+window.selectContact = selectContact;
+window.renderContactsList = renderContactsList;
+window.renderQuickContactsCarousel = renderQuickContactsCarousel;
+window.updateBalanceDisplay = updateBalanceDisplay;
