@@ -5,7 +5,7 @@
 class SoundEngine {
   constructor() {
     this.ctx = null;
-    this.enabled = true;
+    this.enabled = false;
   }
 
   init() {

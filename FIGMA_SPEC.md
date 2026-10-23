@@ -1,8 +1,9 @@
 # Figma File Architecture & Design System Specification
 **Project:** Rakshak: UPI-Simple Solana (Superteam India Bounty Submission)  
+**Author / Contender:** Rudra (@rudhu29) — Solana Ecosystem Designer  
 **Target Resolution:** Mobile: 393 × 852 px (iPhone 16 Pro) | Desktop: 1440 × 900 px  
 **File Structure Checklist:**
-`Cover` → `Problem Summary` → `5 Feature Frames (Before/After Mobile & Desktop)` → `Signature Frames: Rakshak Mode & Undo Window` → `Prototype Flows` → `Design System`
+`Cover` → `Problem Summary & Qualitative Research` → `3 Core Pillars + Secondary Touches (Before/After Mobile & Desktop)` → `Signature Frames: Rakshak Mode & Undo Window` → `Prototype Flows` → `Design System Tokens`
 
 ---
 
@@ -13,44 +14,45 @@
   - Main Title: "Rakshak: UPI-Simple Solana" (Typography: Plus Jakarta Sans Bold, 72px)
   - Subtitle: "India-First Solana Wallet with Rakshak Mode (Hindi/Hinglish + Voice) & 10s Pre-Broadcast Undo Window" (24px, `#94A3B8`)
   - Badges: `Figma Config Bengaluru 2026` • `Solana Summit India` • `Superteam India Design Bounty`
-  - Author / Team metadata and live prototype link
+  - Author: Rudra (@rudhu29)
+  - Live Prototype: `https://solana-upi-redesign.vercel.app`
+  - GitHub Repository: `https://github.com/rudhu29/Solana_App`
 
 ---
 
-## Page 2: Problem Summary & Quantitative Research
+## Page 2: Problem Summary & Qualitative Research
 * **Layout:** Auto-layout vertical (Padding: 80px, Spacing: 48px)
 * **Frames:**
-  1. `Problem Context`: 400M+ UPI users in India vs 100k active Solana wallet users.
-  2. `Research Table`: Summary of 5 non-crypto user tests (Sneha, Kabir, Ananya, Vikram, Rohan).
-  3. `Metric Callout Cards`: 
-     - Send time: 42s → 11s (-73%)
-     - Signing comprehension: 20% → 100% (+400%)
-     - Fee drop-off: 38% → 2% (-94%)
-     - Failed panic: 100% → 0%
-     - Onboarding drop-off: 72% → 4%
+  1. `Problem Context`: 400M+ UPI users in India executing 13B+ monthly transactions vs standard crypto wallets with steep friction.
+  2. `Research Table`: Summary of 5 non-crypto Indian UPI daily users (Sneha in Bengaluru, Kabir in Pune, Ananya in Bengaluru, Vikram in Delhi, Rohan in Pune).
+  3. `Empirical UX Findings Cards`: 
+     - Send time: ~42s verification hesitation → ~11s completion with .sol contacts
+     - Comprehension: Raw bytecode guessing → 4 explicit safety audit checks passed
+     - Fee understanding: Lamports confusion → Instant clarity with upfront ₹0.08 Rupee display
+     - Failure recovery: Assumption of lost funds → Clear understanding of atomic rollback + 1-tap retry
 
 ---
 
 ## Page 3: Feature Frames (Before vs After with Annotations)
 
-### Frame 1: Send Flow & 10-Second Undo Window (Signature Idea)
+### Pillar 1: Send Flow & 10-Second Pre-Broadcast Undo Window (Signature Idea)
 * **Before Screen (Phantom Legacy):**
-  - Annotated Red Callout 1: "Raw 44-character address causes extreme paste anxiety"
+  - Annotated Red Callout 1: "Raw 44-character address (`7xKXtg...sAsU`) causes extreme paste anxiety"
   - Annotated Red Callout 2: "No avatar, no verified badge, no previous transaction history"
-  - Annotated Red Callout 3: "9 taps to complete a basic transfer"
+  - Annotated Red Callout 3: "Immediate irreversible broadcast to RPC with zero cancellation pause"
 * **After Screen (Rakshak: UPI-Simple Solana):**
   - Mobile Frame: Search bar with `.sol` / contact auto-lookup
-  - First-Time Transfer Warning Card: Yellow alert border (`#FFB800`), avatar badge, safety rating
-  - Micro-transfer button: "Send ₹10 first to verify recipient"
+  - First-Time Recipient Alert: Yellow alert border (`#FFB800`), avatar badge, safety rating
+  - Micro-transfer option: "Send ₹10 first to verify recipient"
   - Swipe-to-Pay slider: Full width pill with green gradient track and sound chime trigger
   - **Signature Sub-Frame: 10-Second Undo Countdown Overlay:**
     - Animated SVG countdown ring ticking down (10s ➔ 0s)
     - Prominent high-contrast red button: **`🛑 UNDO SEND (CANCEL)`**
-    - Pre-broadcast buffer transparency banner
+    - Client-side holding queue buffer transparency disclosure
 * **Desktop Variant:**
   - Right drawer overlay (390px width) within dApp window, persistent recipient verification card.
 
-### Frame 2: Signing Screen & "Rakshak Mode" (Signature Idea)
+### Pillar 2: Signing Screen & "Rakshak Mode" (Signature Idea)
 * **Before Screen (Phantom Legacy):**
   - Annotated Red Callout 1: "Cryptic bytecode & instruction dump (Program ID: Tokenkeg...)"
   - Annotated Red Callout 2: "User cannot distinguish what they give vs what they receive"
@@ -61,13 +63,13 @@
     - `🔊 Suniye / Listen` voice speaker button with animated soundwave indicator
   - Plain-Language Safety Card (Localized copy in all 3 languages)
   - Color-coded Security Shield: 
-    - 🟢 Green Safe Shield (Raydium verified)
-    - 🔴 Red Threat Banner ("Malicious drainer detected - 0 SOL permitted")
-  - Financial summary: "You Give: 1.5 SOL (₹24,675) | You Get: 185.2 USDC (₹24,675)"
+    - 🟢 Green Safe Shield (4 Checks Passed)
+    - 🔴 Red Threat Banner ("Malicious drainer intercepted - 0 SOL permitted")
+  - Financial summary: "You Give: 1.50 SOL (≈ ₹24,663 INR) | You Receive: 296.85 USDC (≈ ₹24,639 INR)"
   - Security checklist (4 explicit checks):
-    1. Verified Program ID: Raydium AMM (`675kPX9...22`)
+    1. Verified Program ID: Raydium AMM V4 (`675kPX9...22`)
     2. Official Token Mint: Circle USDC (`EPjFWdd...y9z`)
-    3. Exact Balance Delta: -1.50 SOL / +185.20 USDC
+    3. Exact Balance Delta: -1.50 SOL / +296.85 USDC
     4. Zero arbitrary delegate authority or freeze authority requested
   - **Two-Button Scam Shield Layout:**
     - Primary CTA: "🛡️ Don't Proceed (Recommended)" (High-contrast green/safe)
@@ -75,40 +77,25 @@
 * **Desktop Variant:**
   - Expanded side-panel inspector with raw transaction drawer toggle for advanced power users.
 
-### Frame 3: Network Fees (Rupee-First)
-* **Before Screen (Phantom Legacy):**
-  - Annotated Red Callout 1: "Shown as 0.000005 SOL or in lamports; users fear high cost"
-  - Annotated Red Callout 2: "No real-world context for whether this fee is cheap or expensive"
-* **After Screen (UPI-Simple Solana):**
-  - Big prominent fee display: `₹0.08` with subtitle `(0.000005 SOL)`
-  - Educational anchor: "⚡ 99.9% cheaper than credit card merchant fees (₹45 saved)"
-  - 3 Speed Selector Cards: Standard (₹0.08 • 400ms), Fast (₹0.15 • 200ms), Turbo (₹0.35 • 100ms)
-* **Desktop Variant:**
-  - Header gas meter pill with live Solana TPS and network status.
-
-### Frame 4: Failed or Pending Transaction
+### Pillar 3: Status Pipeline, Atomic Rollback & Fee Transparency
 * **Before Screen (Phantom Legacy):**
   - Annotated Red Callout 1: "Vague red 'Transaction failed: Error 0x1771'"
-  - Annotated Red Callout 2: "User assumes money was deducted; triggers immediate panic"
+  - Annotated Red Callout 2: "User assumes ₹25,000 vanished; triggers panic"
+  - Annotated Red Callout 3: "Fee shown in lamports (0.000005 SOL) with no Rupee reference"
 * **After Screen (UPI-Simple Solana):**
-  - Animated 4-step status timeline: Sent → Broadcast → Validator Slot → Confirmed/Reversed
-  - Green/Amber Peace-of-Mind Banner:
+  - Big prominent fee display: `₹0.08` with subtitle `(0.000005 SOL)`
+  - Educational comparison: "Solana Pay vs Merchant MDR (1.5%–3% card MDR vs ₹0.08 Solana settlement)"
+  - Animated 4-step status timeline: Sent (0.08s) → Broadcast (0.22s) → Validator Slot (0.39s) → Optimistically Confirmed (~400ms) with rooted finality in ~12s
+  - Honest Peace-of-Mind Guarantee:
     - **"🛡️ NO FUNDS MOVED • PRINCIPAL SAFE"**
-    - "Reason: Slippage exceeded 0.5%. Swap aborted; principal 100% safe. (Standard ~₹0.08 validator fee applies for compute inclusion)."
-  - 1-tap buttons: "⚡ Retry with auto-adjusted slippage" and "Share Safe Receipt"
+    - "Solana transactions are strictly atomic. No funds moved. A small network fee (≈ ₹0.08) may apply for validator compute consumed."
+  - 1-tap recovery: "⚡ 1-Tap Retry with Auto-Adjusted Slippage (0.8%)"
 * **Desktop Variant:**
   - Transaction drawer with Solscan explorer link and downloadable receipt.
 
-### Frame 5: Progressive Onboarding
-* **Before Screen (Phantom Legacy):**
-  - Annotated Red Callout 1: "Mandatory 12-word seed phrase wall on step 2"
-  - Annotated Red Callout 2: "72% of newcomers abandon app immediately"
-* **After Screen (UPI-Simple Solana):**
-  - 3-second Passkey / Biometric creation
-  - "Protect Your Wallet" circular progress ring (starts at 40%)
-  - Progressive backup nudges: Suggests Cloud / Hardware backup only when balance crosses ₹1,000
-* **Desktop Variant:**
-  - QR-code instant mobile-passkey sync.
+### Secondary Touches: Onboarding & WhatsApp Receipts
+* **Passkey Biometrics:** 3-second biometric login with progressive "Protect Your Wallet" circular progress ring (starts at 40%, nudging cloud backup as balance grows).
+* **WhatsApp-Shareable Receipt:** 1-tap receipt card formatted with Rupee amounts and verified badges for instant proof-of-payment sharing.
 
 ---
 

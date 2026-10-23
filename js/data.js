@@ -5,20 +5,21 @@ const BOUNTY_DATA = {
   conceptTitle: "Rakshak: UPI-Simple Solana",
   subtitle: "India-First Solana Wallet with 'Rakshak Mode' (Hindi/Hinglish + Voice) & 10-Second Pre-Broadcast Undo Window for 400M+ UPI Users",
   event: "Solana Summit India 2026 × Figma Config Bengaluru",
+  author: "Rudra (@rudhu29)",
   
   // Multilingual Rakshak Mode Audio & Text Translations
   translations: {
     en: {
       langName: "English",
-      signingSafeTitle: "Verified Safe Contract",
+      signingSafeTitle: "4 Safety Checks Passed",
       signingSafeDesc: "Raydium Liquidity Pool V4 • 0 malicious signatures detected",
-      signingSafeSpeech: "You are giving 1.5 SOL and receiving 185.2 USDC on Raydium. Contract is audited and safe. Zero malicious signatures detected.",
+      signingSafeSpeech: "You are giving 1.5 SOL and receiving 296.85 USDC on Raydium. 4 safety checks passed. Zero malicious signatures detected.",
       signingDrainerTitle: "DANGER: Wallet Drainer Detected",
       signingDrainerDesc: "Malicious program requests total authority over your SOL balance.",
       signingDrainerSpeech: "Warning! Malicious wallet drainer detected. This contract will steal all your SOL. Do not approve.",
       failedTxTitle: "🛡️ NO FUNDS MOVED • PRINCIPAL SAFE",
-      failedTxDesc: "Swap aborted due to slippage (>0.5%). Your 1.5 SOL remains in your wallet. (Standard validator fee of ~₹0.08 applies for compute verification).",
-      failedTxSpeech: "No funds moved. Your 1.5 SOL is safe in your wallet. The swap was aborted before execution. Only a standard eight paise validator processing fee applies.",
+      failedTxDesc: "Swap aborted due to price slippage. No funds moved. A small network fee (≈ ₹0.08) may apply.",
+      failedTxSpeech: "No funds moved. Your 1.5 SOL is safe in your wallet. The swap was aborted before execution. A small network fee of eight paise may apply.",
       undoTitle: "10-Second Undo Window",
       undoDesc: "Queued locally in wallet buffer before blockchain broadcast. Tap Cancel if you made a mistake.",
       listenBtn: "🔊 Read Aloud",
@@ -27,15 +28,15 @@ const BOUNTY_DATA = {
     },
     hinglish: {
       langName: "Hinglish",
-      signingSafeTitle: "Verified Safe Contract",
-      signingSafeDesc: "Raydium Liquidity Pool V4 • Bilkul safe hai, 0 scam flags",
-      signingSafeSpeech: "Aap 1.5 SOL de rahe ho aur 185.2 USDC milenge Raydium par. Contract verified hai. Risk: Bilkul Safe.",
+      signingSafeTitle: "4 Safety Checks Verified",
+      signingSafeDesc: "Raydium Liquidity Pool V4 • 4 automated checks pass ho gaye hain",
+      signingSafeSpeech: "Aap 1.5 SOL de rahe ho aur 296.85 USDC milenge Raydium par. 4 safety checks pass ho gaye hain. Zero scam flags.",
       signingDrainerTitle: "KHATRA: Scam Wallet Drainer Mila",
       signingDrainerDesc: "Yeh contract aapka poora SOL balance chori karne ki permission maang raha hai.",
       signingDrainerSpeech: "Khatra! Yeh scam wallet drainer hai. Agar approve kiya toh aapka poora SOL balance chori ho jayega. Turant reject karein.",
       failedTxTitle: "🛡️ FUNDS SAFE • PRINCIPAL SAFE",
-      failedTxDesc: "Slippage limit cross hone par swap cancel ho gaya. Aapka 1.5 SOL safe hai. (Validator verification fee: ~₹0.08).",
-      failedTxSpeech: "Aapke funds bilkul safe hain. 1.5 SOL wallet mein hi hai, koi transfer nahi hua. Sirf aath paise validator processing fee lagi hai.",
+      failedTxDesc: "Slippage exceed hone par swap cancel ho gaya. Koi fund transfer nahi hua. Small network fee (≈ ₹0.08) apply ho sakti hai.",
+      failedTxSpeech: "Koi fund move nahi hua. Swap cancel ho gaya hai. Sirf aath paise network fee lag sakti hai.",
       undoTitle: "10-Second Undo Window",
       undoDesc: "Broadcast se pehle local buffer pause. Agar galat person ko bheja hai toh turant Cancel dabayein.",
       listenBtn: "🔊 Suniye (Listen)",
@@ -44,15 +45,15 @@ const BOUNTY_DATA = {
     },
     hi: {
       langName: "हिंदी",
-      signingSafeTitle: "सत्यापित सुरक्षित अनुबंध",
+      signingSafeTitle: "4 सुरक्षा सत्यापन सफल",
       signingSafeDesc: "Raydium तरलता पूल V4 • शून्य संदिग्ध गतिविधियाँ",
-      signingSafeSpeech: "आप 1.5 SOL दे रहे हैं और Raydium पर 185.2 USDC प्राप्त कर रहे हैं। अनुबंध सत्यापित और पूरी तरह सुरक्षित है।",
+      signingSafeSpeech: "आप 1.5 SOL दे रहे हैं और Raydium पर 296.85 USDC प्राप्त कर रहे हैं। 4 सुरक्षा सत्यापन सफल हुए हैं।",
       signingDrainerTitle: "खतरा: वॉलेट ड्रेनर स्कैम मिला",
       signingDrainerDesc: "दुर्भावनापूर्ण प्रोग्राम आपके पूरे SOL बैलेंस की अनुमति मांग रहा है।",
       signingDrainerSpeech: "सावधान! यह एक फर्जी वॉलेट ड्रेनर है। इसे मंज़ूर न करें, अन्यथा आपका पूरा बैलेंस चोरी हो जाएगा।",
       failedTxTitle: "🛡️ कोई फंड नहीं कटा • मूलधन सुरक्षित",
-      failedTxDesc: "स्लिपेज सीमा से अधिक होने पर लेन-देन रद्द किया गया। आपका 1.5 SOL पूरी तरह सुरक्षित है। (सत्यापन शुल्क: ~₹0.08)",
-      failedTxSpeech: "कोई फंड ट्रांसफर नहीं हुआ। आपका 1.5 SOL वॉलेट में सुरक्षित है। केवल आठ पैसे नेटवर्क शुल्क लगा है।",
+      failedTxDesc: "स्लिपेज सीमा पार होने पर लेन-देन रद्द हुआ। कोई राशि नहीं कटी। केवल ₹0.08 नेटवर्क शुल्क लागू हो सकता है।",
+      failedTxSpeech: "कोई फंड ट्रांसफर नहीं हुआ। लेन-देन रद्द कर दिया गया है। केवल आठ पैसे नेटवर्क शुल्क लग सकता है।",
       undoTitle: "10-सेकंड वापसी विंडो (Undo)",
       undoDesc: "ब्लॉकचेन प्रसारण से पहले रोक। गलती होने पर तुरंत रद्द करें।",
       listenBtn: "🔊 बोलकर सुनाएं",
@@ -62,7 +63,7 @@ const BOUNTY_DATA = {
   },
 
   exchangeRate: {
-    solInr: 16442.50,
+    solInr: 16442.30,
     solUsd: 198.10,
     usdInr: 83.00,
     networkFeeSol: 0.000005,
@@ -78,12 +79,12 @@ const BOUNTY_DATA = {
       painPoint: "Long, terrifying addresses (e.g., 7xKXtg...9vW). One wrong paste means your hard-earned money is gone forever.",
       fix: "Search by .sol name or phone-synced contact with safety badges, avatar previews, and a dedicated 'First Time Sending' identity confirmation card.",
       metrics: {
-        taps: { before: 9, after: 4, improvement: "55% fewer taps" },
-        timeSeconds: { before: 42, after: 11, improvement: "73% faster" },
-        anxietyScore: { before: "8.9/10", after: "1.2/10", improvement: "86% lower stress" }
+        taps: { before: "9 taps", after: "4 taps", improvement: "55% fewer taps" },
+        timeSeconds: { before: "~42s", after: "~11s", improvement: "73% faster completion" },
+        anxietyScore: { before: "High (fear of wrong paste)", after: "Low (identity verified)", improvement: "Zero wrong-address anxiety" }
       },
       quote: {
-        user: "Sneha K., 24 (Fintech Product Analyst, never used crypto)",
+        user: "Sneha K., 24 (Product Analyst, Bengaluru)",
         text: "In GPay I see Rahul's photo and his bank verified tick before I type my PIN. In Phantom, pasting 9wFF... felt like firing a missile blindfolded into the dark."
       }
     },
@@ -93,14 +94,14 @@ const BOUNTY_DATA = {
       title: "Plain-Language Signing Card",
       summary: "Translating cryptic instruction byte-dumps into clear 'You Give / You Get' with real-time risk security shields.",
       painPoint: "Technical jargon (e.g., 'Program ID: TokenkegQfe... Instruction 2'). Users blindly tap 'Approve' without knowing if their wallet will be drained.",
-      fix: "Human financial breakdown with a safety triage banner (Green Verified / Amber Caution / Red Drainer) and simulated balance change in Rupees.",
+      fix: "Human financial breakdown with a safety triage banner (4 Checks Passed / Red Drainer) and simulated balance change in Rupees.",
       metrics: {
-        comprehension: { before: "20%", after: "100%", improvement: "+400% clarity" },
-        blindApproval: { before: "80%", after: "0%", improvement: "Zero blind approvals" },
-        confidenceScore: { before: "2.1/5", after: "4.9/5", improvement: "133% boost" }
+        comprehension: { before: "Cryptic bytecode", after: "Clear Give/Get", improvement: "Verbal comprehension verified" },
+        blindApproval: { before: "Common blind approval", after: "Explicit review", improvement: "Testers review token amounts" },
+        confidenceScore: { before: "Hesitant", after: "Confident", improvement: "Clear understanding of deductions" }
       },
       quote: {
-        user: "Kabir M., 29 (Architect, avid UPI user)",
+        user: "Kabir M., 29 (Architect, Pune)",
         text: "I looked at the approval screen and thought: 'If this stole all my money, I wouldn't even know until it was already gone.' The new safety card actually speaks human."
       }
     },
@@ -112,13 +113,13 @@ const BOUNTY_DATA = {
       painPoint: "Gas fees shown as 0.000005 SOL or in lamports. Beginners have zero intuition of whether that's 5 paise or 5,000 rupees.",
       fix: "Show fees upfront in ₹ (e.g., '≈ ₹0.08') with an intuitive explanation ('Cost to verify on Solana') and 1-tap Turbo priority toggle.",
       metrics: {
-        feeUnderstanding: { before: "0%", after: "100%", improvement: "Instant clarity" },
-        userDropoff: { before: "38%", after: "2%", improvement: "94% drop-off reduction" },
-        speedSelectionRate: { before: "5%", after: "42%", improvement: "Easy priority use" }
+        feeUnderstanding: { before: "Confusing lamports", after: "Instant ₹ value", improvement: "Clear understanding of ~₹0.08" },
+        userDropoff: { before: "Hesitation on fee", after: "Immediate acceptance", improvement: "No fee hesitation observed" },
+        speedSelectionRate: { before: "Ignored priority", after: "Intuitive choice", improvement: "Easy priority speed selection" }
       },
       quote: {
         user: "Ananya R., 22 (Design student, Bengaluru)",
-        text: "I thought 0.0005 SOL might be 500 rupees! When I saw it says '≈ ₹0.08 (99% cheaper than credit card fees)', I realized Solana is actually like free UPI."
+        text: "I thought 0.0005 SOL might be 500 rupees! When I saw it says '≈ ₹0.08', I realized Solana is actually like free UPI."
       }
     },
     {
@@ -127,11 +128,11 @@ const BOUNTY_DATA = {
       title: "Peace-of-Mind Recovery Timeline",
       summary: "A transparent state machine with explicit fund safety guarantee and one-tap smart retry.",
       painPoint: "A vague red 'Transaction failed' popup leaves users panicking that their money was deducted and lost forever.",
-      fix: "A live step-by-step pipeline (Sent → Validated → Block Slot → Confirmed) and an emphatic banner: 'No funds moved • Principal 100% safe (validator fee ~₹0.08 applies)' with auto-slippage retry.",
+      fix: "A live step-by-step pipeline (Sent → Validated → Block Slot → Confirmed) and an honest banner: 'No funds moved. A small network fee (≈ ₹0.08) may apply.' with auto-slippage retry.",
       metrics: {
-        panicSupportTickets: { before: "100%", after: "0%", improvement: "Zero panic tickets" },
-        retrySuccessRate: { before: "15%", after: "88%", improvement: "5.8x recovery rate" },
-        resolutionTime: { before: "8 mins", after: "45 secs", improvement: "90% faster recovery" }
+        panicSupportTickets: { before: "Panic on 0x1771", after: "Calm comprehension", improvement: "Understands no funds moved" },
+        retrySuccessRate: { before: "Abandonment on error", after: "1-tap retry", improvement: "Immediate unassisted recovery" },
+        resolutionTime: { before: "Minutes of confusion", after: "Instant feedback", improvement: "Immediate clarity on failure reason" }
       },
       quote: {
         user: "Vikram S., 31 (E-commerce operations, Delhi)",
@@ -146,9 +147,9 @@ const BOUNTY_DATA = {
       painPoint: "Forcing newcomers to write down 12 words on physical paper before they even know if they like the app.",
       fix: "Instant 3-second biometric/passkey setup. The wallet introduces a gamified 'Protect Your Wallet' ring that unlocks cloud backups as balances grow.",
       metrics: {
-        signupDropoff: { before: "72%", after: "4%", improvement: "68% more completed signups" },
-        timeToFirstWallet: { before: "4m 12s", after: "18s", improvement: "14x faster start" },
-        backupCompletion: { before: "28%", after: "91%", improvement: "Higher real retention" }
+        signupDropoff: { before: "Hesitation on 12 words", after: "Instant FaceID passkey", improvement: "Frictionless setup" },
+        timeToFirstWallet: { before: "~4 minutes", after: "~18 seconds", improvement: "10x faster first wallet" },
+        backupCompletion: { before: "Paper seed burden", after: "Progressive cloud backup", improvement: "Deferred until funds deposited" }
       },
       quote: {
         user: "Rohan D., 26 (Software dev, Pune)",

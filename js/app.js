@@ -8,7 +8,7 @@ const state = {
   currentFeature: 'send',   // 'send', 'signing', 'fees', 'status', 'onboarding'
   deviceMode: 'mobile',     // 'mobile' or 'desktop'
   currency: 'INR',          // 'INR', 'USD', 'SOL'
-  soundEnabled: true,
+  soundEnabled: false,
 
   // Balances
   balanceSol: 4.82,
@@ -517,7 +517,7 @@ function renderSafeSigningView() {
     checklist.innerHTML = `
       <div class="check-item ok"><span>✓</span> Verified Program ID: Raydium AMM (675kPX9...22)</div>
       <div class="check-item ok"><span>✓</span> Official Token Mint: Circle USDC (EPjFWdd...y9z)</div>
-      <div class="check-item ok"><span>✓</span> Exact Balance Delta: -1.50 SOL / +185.20 USDC</div>
+      <div class="check-item ok"><span>✓</span> Exact Balance Delta: -1.50 SOL / +296.85 USDC</div>
       <div class="check-item ok"><span>✓</span> Zero arbitrary delegate or freeze authority requested</div>
     `;
   }
@@ -667,8 +667,8 @@ function simulatePipeline(isSuccess) {
       if (banner) {
         banner.className = 'safety-guarantee-banner';
         banner.style.display = 'flex';
-        if (bannerTitle) bannerTitle.textContent = 'Transaction Confirmed Permanently';
-        if (bannerDesc) bannerDesc.textContent = 'Your funds reached the recipient in 420 milliseconds. Block slot #289,140,211.';
+        if (bannerTitle) bannerTitle.textContent = 'Optimistically Confirmed (~400ms)';
+        if (bannerDesc) bannerDesc.textContent = 'Recipient balance updated in 420ms (slot #289,140,211). Rooted finality locks in ~12s (31+ slots).';
       }
     } else {
       window.soundEngine.playWarning();
@@ -1049,7 +1049,7 @@ window.shareOnWhatsApp = function() {
 🕒 *Time:* Today at ${timeStr}
 ⚡ *Network Fee:* ₹0.08 (0.000005 SOL)
 ⏱️ *Finality:* 398 ms
-🛡️ *Status:* Confirmed Permanently on Solana L1
+🛡️ *Status:* Optimistically Confirmed (~400ms) on Solana L1
 🔗 *Solscan Verified:* solscan.io/tx/4s8F...9vW1
 ━━━━━━━━━━━━━━━━━━
 _Protected by Rakshak: UPI-Simple Solana_`;

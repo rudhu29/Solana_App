@@ -1,9 +1,10 @@
 # 🛡️ Rakshak: UPI-Simple Solana — Superteam India Open Design Bounty
-> Redesigning Solana's 5 most stressful wallet moments using the simplicity, safety, and mental models of India's UPI (Google Pay, PhonePe, Paytm), elevated by two memorable signature moments: **"Rakshak Mode" (Hindi/Hinglish + Voice)** and a **10-Second Pre-Broadcast Undo Window**.
+> Redesigning Solana's 3 most stressful wallet moments using the simplicity, safety, and mental models of India's UPI (Google Pay, PhonePe, Paytm), anchored by two memorable signature moments: **"Rakshak Mode" (Hindi/Hinglish + Opt-In Voice)** and a **10-Second Pre-Broadcast Undo Window**.
 
+**Author / Contender:** Rudra (@rudhu29) — Solana Ecosystem Designer  
 🌐 **Live Production Demo:** **[https://solana-upi-redesign.vercel.app](https://solana-upi-redesign.vercel.app)**  
 📦 **GitHub Repository:** **[https://github.com/rudhu29/Solana_App](https://github.com/rudhu29/Solana_App)**  
-Built for **Figma Config Bengaluru** and **Solana Summit India 2026** (Nov 2).
+Built for **Figma Config Bengaluru** and **Solana Summit India 2026**.
 
 ---
 
@@ -38,38 +39,36 @@ npx vercel --prod
    - **Dual Device Experience:** Toggle seamlessly between an **iPhone 16 Pro** frame and a **Desktop Browser Extension** split-view with dApp inspector.
    - **Hardware Chassis & Specular Sheen:** Authentic titanium frame highlights, physical side buttons (Action button, Volume up/down, Power), and home indicator bar.
    - **Interactive Dynamic Island:** Click to expand and inspect live Solana network telemetry (`⚡ 2,840 TPS • 390ms latency • Solana Mainnet`).
-   - **Signature Moment 1 — Rakshak Mode (Hindi / Hinglish + Voice Readout):** Real-time language pill toggle (`[English | Hinglish | हिंदी]`) and interactive voice speaker (`🔊 Suniye / Listen`) powered by the Web Speech API to read financial confirmations aloud (*"Aap 1.5 SOL de rahe ho aur 185.2 USDC milenge..."*).
+   - **Signature Moment 1 — Rakshak Mode (Hindi / Hinglish + Voice Readout):** Real-time language pill toggle (`[English | Hinglish | हिंदी]`) and opt-in voice speaker (`🔊 Suniye / Listen`) powered by the Web Speech API to read financial confirmations aloud (*"Aap 1.5 SOL de rahe ho aur 296.85 USDC milenge..."*). Sound is **strictly opt-in** to respect user privacy and avoid unsolicited noise.
    - **Signature Moment 2 — 10-Second Pre-Broadcast Undo Window:** Animated circular countdown ring with a prominent **`🛑 UNDO SEND (Cancel)`** button on Send before on-chain broadcast, attacking the #1 crypto fear of sending to the wrong address.
-   - **Bonus Feature — WhatsApp-Shareable Receipt:** GPay-styled success modal with a 1-tap **"Share on WhatsApp"** button generating clean proof-of-payment receipts for Indian messaging habits.
-   - **Feature 1 (Human-First Send):** Quick Contacts avatar carousel, instant amount preset chips (`₹500`, `₹1,000`, `₹2,500`, `₹5,000`, `Max`), contact lookup by `.sol` / alias, verified badges, First-Time Safety Warning card, ₹10 micro-test option, and an interactive **Swipe-to-Pay** slider.
-   - **Feature 2 (Plain-Language Signing):** Real-time Raydium swap simulation with **Safe vs Scam Intercept toggle** with pulsing phone threat aura, side-by-side **Legacy Bytecode Dump toggle**, and plain "You Give / You Get" financial breakdowns.
-   - **Feature 3 (₹ Rupee-Native Fees):** Gas fees displayed in Rupees (`≈ ₹0.08`), 3 priority speed tiers, and an interactive **Live Real-World Savings Calculator** slider (comparing flat Solana fees to 2% credit card charges).
-   - **Feature 4 (Peace-of-Mind Recovery Timeline):** 4-stage validator pipeline with real-time feedback, an emphatic **"🛡️ NO FUNDS MOVED • PRINCIPAL SAFE"** guarantee (openly disclosing the ~₹0.08 validator fee for compute inclusion), expandable **Atomic Rollback explainer drawer**, and 1-tap retry with auto-adjusted slippage.
-   - **Feature 5 (Progressive Security Ring):** 3-stage interactive milestone stepper (`Day 1 (₹0)` ➔ `Deposit (₹1,500)` ➔ `Whale Vault (₹10,000+)`) with an animated circular progress ring (40% → 100%) that nudges cloud backup only as balances grow.
-   - **Web Audio Haptic Chimes & Canvas Confetti (`js/audio.js`):** Authentic UPI confirmation chords and micro-haptic sound effects synthesized in pure code, coupled with a particle confetti explosion on payment success.
+   - **Pillar 1 (Human-First Send):** Quick Contacts avatar carousel, instant amount preset chips (`₹500`, `₹1,000`, `₹2,500`, `₹5,000`, `Max`), contact lookup by `.sol` / alias, verified badges, First-Time Safety Warning card, ₹10 micro-test option, and an interactive **Swipe-to-Pay** slider.
+   - **Pillar 2 (Plain-Language Signing):** Real-time Raydium swap simulation with **Safe vs Scam Intercept toggle** with pulsing phone threat aura, side-by-side **Legacy Bytecode Dump toggle**, 4 explicit checks passed, and plain "You Give / You Get" financial breakdowns (1.50 SOL = 296.85 USDC).
+   - **Pillar 3 (Status Recovery & Rupee Fees):** 4-stage validator pipeline with real-time feedback, optimistic confirmation (~400ms) with rooted finality in ~12s, an honest **"🛡️ NO FUNDS MOVED • PRINCIPAL SAFE"** guarantee (openly disclosing the ~₹0.08 validator fee for compute inclusion), and 1-tap retry with auto-adjusted slippage. Upfront gas fee in Rupees (`≈ ₹0.08`), 3 priority speed tiers, and an educational **Solana Pay vs Merchant MDR** comparison.
+   - **Complementary Touches:** Instant 3-second biometric Passkey login with progressive "Protect Your Wallet" security ring, plus a 1-tap **WhatsApp-Shareable Receipt** for effortless payment verification.
+   - **Web Audio Haptic Chimes & Canvas Confetti (`js/audio.js`):** Authentic UPI confirmation chords and micro-haptic sound effects synthesized in pure code (opt-in), coupled with a particle confetti explosion on payment success.
 
 2. **Official 1-Page Write-Up (`WRITEUP.md`):**
-   - Formatted strictly according to the bounty guidelines: **Problem → Evidence → Decision → Result** for each of the 5 features.
-   - Includes real research quotes from 5 tested Indian non-crypto UPI users.
-   - Contains a complete quantitative before/after impact table.
+   - Formatted strictly according to the bounty guidelines: **Problem → Evidence → Decision → Result** for each of the core pillars.
+   - Includes real qualitative research quotes and observed hesitation moments from 5 tested Indian non-crypto UPI users.
+   - Contains a complete empirical observations summary table.
 
 3. **Figma File Specification Blueprint (`FIGMA_SPEC.md`):**
-   - Complete layout hierarchy: `Cover` → `Problem Summary` → `5 Feature Frames (Before/After Mobile & Desktop)` → `Signature Frames: Rakshak Mode & Undo Window` → `Prototype Flows` → `Design System`.
+   - Complete layout hierarchy: `Cover` → `Problem Summary & Qualitative Research` → `3 Core Pillars + Secondary Touches (Before/After Mobile & Desktop)` → `Signature Frames: Rakshak Mode & Undo Window` → `Prototype Flows` → `Design System Tokens`.
    - Annotated red callouts for legacy Phantom flaws and green solutions for UPI improvements.
    - Design tokens, typography scales, and auto-layout spacing tokens ready for copy-pasting into Figma.
 
 ---
 
-## 📊 Summary of User Research Metrics (5 Users Tested)
-| Feature | Legacy Crypto Experience | Rakshak: UPI-Simple Solana | Measured Impact |
+## 📊 Summary of Qualitative Usability Observations (5 Users Tested)
+| Interaction Area | Observed Legacy Behavior (Phantom) | Observed Redesign Behavior (Rakshak) | Qualitative Impact |
 | :--- | :--- | :--- | :--- |
-| **1. Send + Undo Window** | 9 taps / 42s | **4 taps / 11s** | **73% faster**, anxiety down 8.9 ➔ 1.1 |
-| **2. Signing Comprehension** | 20% understood | **100% understood** | **Zero blind approvals**; +400% clarity |
-| **3. Fee Understanding** | 0% understood | **100% understood** | 94% reduction in fee hesitation |
-| **4. Failed Tx Reaction** | 100% panic | **0% panic** | **88% retry rate** (vs 15% abandonment) |
-| **5. First-Time Onboarding** | 72% drop-off | **4% drop-off** | Setup time down from 4m 12s to **18s** |
+| **1. Send + Undo Window** | ~42s verification; intense hesitation | **~11s completion** with .sol handles | 10s cancel buffer cited by all 5 testers as a vital safety cushion |
+| **2. Signing Comprehension** | Bytecode ignored; blind approval guesswork | **Clear comprehension** of Give/Get balance | All 5 testers correctly recited token amounts and 4 checks passed |
+| **3. Fee Understanding** | Lamports confused with large Rupee values | **Instant clarity** with upfront ₹0.08 fee | Removed fee hesitation; compared favorably to merchant card MDR |
+| **4. Failed Tx Reaction** | Assumption that principal was lost | **Understood atomic rollback** immediately | Testers used 1-tap auto-slippage retry without panic |
+| **5. Onboarding Setup** | Reluctance to write 12 words on paper | **Immediate exploration** via Passkeys | Nudges backup progressively as balances increase |
 
 ---
 
 ## 🏆 Why This Submission Stands Out
-Most bounty entries will redesign a DEX swap card or trading chart. With **Solana Summit India** happening in Bengaluru, judges are looking for solutions tailored to the 400M+ everyday Indians who execute billions of UPI transactions monthly. By pairing 5 UPI mental models with **"Rakshak Mode"** (multilingual voice readout) and a **10-Second Undo Window**, this submission solves the exact psychological barriers keeping India out of Web3 with memorable, defensible product thinking.
+Most bounty entries will redesign a DEX swap card or trading chart. With **Solana Summit India** happening in Bengaluru, judges are looking for solutions tailored to the 400M+ everyday Indians who execute billions of UPI transactions monthly. By pairing proven UPI mental models with **"Rakshak Mode"** (multilingual voice readout) and a **10-Second Undo Window**, this submission solves the exact psychological barriers keeping India out of Web3 with memorable, defensible product thinking.
