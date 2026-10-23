@@ -667,8 +667,8 @@ function simulatePipeline(isSuccess) {
       if (banner) {
         banner.className = 'safety-guarantee-banner';
         banner.style.display = 'flex';
-        if (bannerTitle) bannerTitle.textContent = 'Optimistically Confirmed (~400ms)';
-        if (bannerDesc) bannerDesc.textContent = 'Recipient balance updated in 420ms (slot #289,140,211). Rooted finality locks in ~12s (31+ slots).';
+        if (bannerTitle) bannerTitle.textContent = 'Confirmed';
+        if (bannerDesc) bannerDesc.textContent = 'Recipient balance credited in ~420ms (slot #289,140,211). Cluster confirmation completed.';
       }
     } else {
       window.soundEngine.playWarning();
@@ -1049,7 +1049,7 @@ window.shareOnWhatsApp = function() {
 🕒 *Time:* Today at ${timeStr}
 ⚡ *Network Fee:* ₹0.08 (0.000005 SOL)
 ⏱️ *Finality:* 398 ms
-🛡️ *Status:* Optimistically Confirmed (~400ms) on Solana L1
+🛡️ *Status:* Confirmed on Solana L1 (Slot #289,140,211)
 🔗 *Solscan Verified:* solscan.io/tx/4s8F...9vW1
 ━━━━━━━━━━━━━━━━━━
 _Protected by Rakshak: UPI-Simple Solana_`;
@@ -1063,3 +1063,310 @@ _Protected by Rakshak: UPI-Simple Solana_`;
   const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}`;
   window.open(url, '_blank');
 };
+
+// ==========================================================================
+// FIGMA INTERACTIVE CANVAS CONTROLLER
+// ==========================================================================
+window.switchFigmaPage = function(pageNum) {
+  for (let i = 1; i <= 5; i++) {
+    const btn = document.getElementById(`figtab-${i}`);
+    if (btn) btn.classList.toggle('active', i === pageNum);
+  }
+
+  const titleEl = document.getElementById('figmaCurrentTitle');
+  const dimEl = document.getElementById('figmaCurrentDim');
+  const boardEl = document.getElementById('figmaDynamicArtboard');
+  if (!boardEl) return;
+
+  if (pageNum === 1) {
+    if (titleEl) titleEl.textContent = 'Page 1: Project Canvas & Metadata Cover';
+    if (dimEl) dimEl.textContent = '1920 × 1080 px';
+    boardEl.innerHTML = `
+      <div class="figma-artboard-display">
+        <img src="assets/rakshak_figma_cover.svg" alt="Figma 1920x1080 Cover Artboard" class="figma-cover-hero-img">
+      </div>
+    `;
+  } else if (pageNum === 2) {
+    if (titleEl) titleEl.textContent = 'Page 2: Problem Summary (400M UPI vs Crypto Anxiety)';
+    if (dimEl) dimEl.textContent = '1920 × 1080 px';
+    boardEl.innerHTML = `
+      <div class="figma-artboard-display" style="padding: 40px; background: #0A0D18;">
+        <div style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px;">
+          <div style="border-left: 4px solid var(--sol-purple); padding-left: 16px;">
+            <h4 style="font-size: 26px; font-weight: 800; color: #FFF;">400 Million UPI Users vs 100k Active Solana Wallets</h4>
+            <p style="font-size: 14px; color: var(--text-secondary); margin-top: 6px;">Every day in India, 400M citizens execute 13B+ UPI transactions with 0% cognitive friction. When they open Solana wallets, they encounter 3 terrifying friction points.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+            <div style="background: var(--bg-card); padding: 18px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+              <div style="font-size: 24px; margin-bottom: 8px;">😱</div>
+              <h5 style="font-size: 14px; font-weight: 700; color: var(--risk-danger);">1. The 44-Char Panic</h5>
+              <p style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">Pasting 44-character strings with no avatar, verified badge, or undo capability.</p>
+            </div>
+            <div style="background: var(--bg-card); padding: 18px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+              <div style="font-size: 24px; margin-bottom: 8px;">🙈</div>
+              <h5 style="font-size: 14px; font-weight: 700; color: var(--risk-amber);">2. Signing Blindness</h5>
+              <p style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">Cryptic bytecode instructions causing non-technical users to approve blindfolded.</p>
+            </div>
+            <div style="background: var(--bg-card); padding: 18px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+              <div style="font-size: 24px; margin-bottom: 8px;">📉</div>
+              <h5 style="font-size: 14px; font-weight: 700; color: var(--sol-cyan);">3. Cryptic Errors</h5>
+              <p style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">Error 0x1771 leaving users terrified that their hard-earned money was debited.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  } else if (pageNum === 3) {
+    if (titleEl) titleEl.textContent = 'Page 3: The 3 Core Feature Frames (Before / After Mobile & Desktop)';
+    if (dimEl) dimEl.textContent = '393×852 (Mobile) & 1440×900 (Desktop Side-Panel)';
+    boardEl.innerHTML = `
+      <div class="figma-artboard-display" style="padding: 24px; background: #0A0D18;">
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div style="background: var(--bg-card); padding: 16px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span class="badge badge-solana">Pillar 1: Send Flow & 10s Pre-Broadcast Undo Window</span>
+              <span style="font-size: 11px; color: var(--text-tertiary);">Mobile (393×852) & Desktop Side Panel</span>
+            </div>
+            <p style="font-size: 12px; color: var(--text-secondary);">Before: Phantom unverified 44-char paste (Red Callouts 1–4) ➔ After: Verified .sol contacts, ₹10 test transfer, and 10s pre-broadcast buffer ring with 1-tap Cancel (Green Callouts 1–4).</p>
+          </div>
+          <div style="background: var(--bg-card); padding: 16px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span class="badge badge-upi">Pillar 2: Plain-Language Signing & Rakshak Mode</span>
+              <span style="font-size: 11px; color: var(--text-tertiary);">Mobile (393×852) & Desktop Side Panel</span>
+            </div>
+            <p style="font-size: 12px; color: var(--text-secondary);">Before: Bytecode instruction dump ➔ After: Simulated balance delta in INR (1.5 SOL = 296.85 USDC), 4 explicit checks passed, and opt-in Hindi/Hinglish voice readout.</p>
+          </div>
+          <div style="background: var(--bg-card); padding: 16px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span class="badge badge-safe">Pillar 3: Status Pipeline & Honest Fee Transparency</span>
+              <span style="font-size: 11px; color: var(--text-tertiary);">Mobile (393×852) & Desktop Side Panel</span>
+            </div>
+            <p style="font-size: 12px; color: var(--text-secondary);">Before: Vague Error 0x1771 ➔ After: 4-stage validator pipeline with Confirmed status, honest fee disclosure ("No funds moved. A small network fee of ≈ ₹0.08 may apply"), and 1-tap auto-slippage retry.</p>
+          </div>
+        </div>
+      </div>
+    `;
+  } else if (pageNum === 4) {
+    if (titleEl) titleEl.textContent = 'Page 4: Prototype Micro-Interaction State Flows';
+    if (dimEl) dimEl.textContent = 'Smart-Animate State Machine';
+    boardEl.innerHTML = `
+      <div class="figma-artboard-display" style="padding: 30px; background: #0A0D18;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <div style="background: var(--bg-card); padding: 18px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+            <h5 style="font-size: 14px; font-weight: 700; color: #FFF; margin-bottom: 8px;">⚡ Swipe-To-Pay Interaction Machine</h5>
+            <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary); line-height: 1.8;">
+              State 01: [Idle] Slider pill positioned left<br>
+              State 02: [OnDrag] Dynamic spring track fill & haptic pulse<br>
+              State 03: [Threshold 90%] Triggers 10s Undo countdown buffer<br>
+              State 04: [Buffer Expire / Skip] Broadcast to Solana RPC ➔ Confetti Modal
+            </div>
+          </div>
+          <div style="background: var(--bg-card); padding: 18px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+            <h5 style="font-size: 14px; font-weight: 700; color: #FFF; margin-bottom: 8px;">🛡️ Rakshak Audio & Scam Shield State</h5>
+            <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary); line-height: 1.8;">
+              State 01: [Language Select] EN / Hinglish / Hindi toggle<br>
+              State 02: [Tap to Listen] Device Web Speech synthesis with waveform chime<br>
+              State 03: [Threat Detected] Phone chassis pulses red aura<br>
+              State 04: [Scam Shield CTA] "Don't Proceed (Recommended)" takes primary focus
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  } else if (pageNum === 5) {
+    if (titleEl) titleEl.textContent = 'Page 5: Unified Mini Design System Tokens';
+    if (dimEl) dimEl.textContent = 'Strict Color & Typography Tokens';
+    boardEl.innerHTML = `
+      <div class="figma-artboard-display" style="padding: 24px; background: #0A0D18;">
+        <div style="font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 12px;">1. Strict Risk Color Set</div>
+        <div class="figma-tokens-grid">
+          <div class="token-swatch-card">
+            <div class="swatch-color-bar" style="background: #00F08B;"></div>
+            <div class="swatch-meta">
+              <h6>Safe / Verified / Trust</h6>
+              <p>#00F08B • Background: 12% • Border: 35%</p>
+            </div>
+          </div>
+          <div class="token-swatch-card">
+            <div class="swatch-color-bar" style="background: #FFB800;"></div>
+            <div class="swatch-meta">
+              <h6>Warning / Caution / Slippage</h6>
+              <p>#FFB800 • Background: 12% • Border: 30%</p>
+            </div>
+          </div>
+          <div class="token-swatch-card">
+            <div class="swatch-color-bar" style="background: #FF3B69;"></div>
+            <div class="swatch-meta">
+              <h6>Danger / Drainer Threat</h6>
+              <p>#FF3B69 • Background: 15% • Border: 40%</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="font-size: 13px; font-weight: 700; color: var(--text-primary); margin-top: 24px; margin-bottom: 12px;">2. Unified Typography Scale</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+          <div style="background: var(--bg-card); padding: 14px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+            <div style="font-size: 18px; font-weight: 800; font-family: 'Plus Jakarta Sans', sans-serif;">Display Bold</div>
+            <div style="font-size: 11px; color: var(--text-tertiary); margin-top: 4px;">Plus Jakarta Sans • 72px / 32px / 24px</div>
+          </div>
+          <div style="background: var(--bg-card); padding: 14px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+            <div style="font-size: 15px; font-weight: 500; font-family: 'Inter', sans-serif;">Body Medium</div>
+            <div style="font-size: 11px; color: var(--text-tertiary); margin-top: 4px;">Inter • 14px / 13px / 12px</div>
+          </div>
+          <div style="background: var(--bg-card); padding: 14px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+            <div style="font-size: 13px; font-weight: 700; font-family: 'JetBrains Mono', monospace; color: var(--sol-emerald);">Mono Data 0x1771</div>
+            <div style="font-size: 11px; color: var(--text-tertiary); margin-top: 4px;">JetBrains Mono • 13px / 11px</div>
+          </div>
+        </div>
+
+        <div style="font-size: 13px; font-weight: 700; color: var(--text-primary); margin-top: 24px; margin-bottom: 8px;">3. Unified Iconography Style</div>
+        <p style="font-size: 12px; color: var(--text-secondary);">All icons strictly styled as 20px rounded stroke geometry (1.75px stroke width, Phosphor / Feather geometry) for visual calm.</p>
+      </div>
+    `;
+  }
+};
+
+window.copyFigmaSvgCode = function() {
+  fetch('assets/rakshak_figma_cover.svg')
+    .then(res => res.text())
+    .then(svgText => {
+      navigator.clipboard.writeText(svgText).then(() => {
+        alert('📋 Official Figma Cover SVG copied to clipboard! You can paste it directly into any Figma canvas.');
+      });
+    })
+    .catch(() => {
+      alert('Official Figma Cover SVG ready in assets/rakshak_figma_cover.svg');
+    });
+};
+
+// ==========================================================================
+// EDGE STATES SIMULATOR CONTROLLER
+// ==========================================================================
+window.setEdgeState = function(stateType, chipEl) {
+  const chips = document.querySelectorAll('.edge-chip');
+  chips.forEach(c => c.classList.remove('active'));
+  if (chipEl) chipEl.classList.add('active');
+
+  const phone = document.getElementById('phoneMockup');
+
+  if (stateType === 'compact_screen') {
+    if (phone) phone.classList.toggle('compact-viewport');
+    return;
+  } else {
+    if (phone) phone.classList.remove('compact-viewport');
+  }
+
+  if (stateType === 'normal') {
+    state.selectedContact = BOUNTY_DATA.contacts[0];
+    state.sendAmountInr = 1000;
+    renderSendForm();
+    alert('Reset to Standard Normal State: Rahul Sharma (1.50 SOL balance)');
+  } else if (stateType === 'error_gas') {
+    state.sendAmountInr = 25000;
+    const warning = document.createElement('div');
+    warning.id = 'gasErrorToast';
+    warning.style.cssText = 'background: rgba(255, 59, 105, 0.15); border: 1px solid var(--risk-danger); color: #FFF; padding: 10px; border-radius: 8px; font-size: 11px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;';
+    warning.innerHTML = '<span>⚠️ Insufficient SOL for network fee (0.000005 SOL needed).</span> <button class="btn btn-secondary" style="padding: 2px 6px; font-size: 10px;" onclick="this.parentElement.remove()">Add ₹50</button>';
+    const form = document.querySelector('.send-form-card');
+    if (form && !document.getElementById('gasErrorToast')) {
+      form.prepend(warning);
+    }
+  } else if (stateType === 'empty_wallet') {
+    const list = document.getElementById('contactsScroll');
+    if (list) {
+      list.innerHTML = '<div style="font-size: 12px; color: var(--text-tertiary); padding: 12px; width: 100%; text-align: center;">📭 No recent contacts found. Search .sol or scan QR to get started.</div>';
+    }
+    const bal = document.getElementById('walletBalanceInr');
+    if (bal) bal.textContent = '₹0';
+  } else if (stateType === 'long_name') {
+    state.selectedContact = {
+      name: "Siddharth Narayanaswamy Long Name",
+      handle: "siddharth-narayanaswamy-very-long-name.sol",
+      avatar: "👨🏽‍🎓",
+      safetyRating: "verified",
+      isFirstTime: true
+    };
+    renderSendForm();
+  }
+};
+
+// ==========================================================================
+// 60-SECOND GUIDED DEMO TOUR CONTROLLER
+// ==========================================================================
+let currentTourStep = 1;
+
+window.start60sTour = function() {
+  currentTourStep = 1;
+  const modal = document.getElementById('tourModalBackdrop');
+  if (modal) modal.classList.add('active');
+  renderTourStep(1);
+};
+
+window.close60sTour = function() {
+  const modal = document.getElementById('tourModalBackdrop');
+  if (modal) modal.classList.remove('active');
+};
+
+window.nextTourStep = function() {
+  if (currentTourStep < 4) {
+    currentTourStep++;
+    renderTourStep(currentTourStep);
+  } else {
+    window.close60sTour();
+    alert('🎉 60-second walkthrough complete! You can now freely interact with the prototype.');
+  }
+};
+
+window.prevTourStep = function() {
+  if (currentTourStep > 1) {
+    currentTourStep--;
+    renderTourStep(currentTourStep);
+  }
+};
+
+function renderTourStep(step) {
+  for (let i = 1; i <= 4; i++) {
+    const dot = document.getElementById(`tdot-${i}`);
+    if (dot) dot.classList.toggle('active', i === step);
+  }
+
+  const tag = document.getElementById('tourStepTag');
+  const title = document.getElementById('tourStepTitle');
+  const desc = document.getElementById('tourStepDesc');
+  const visual = document.getElementById('tourStepVisual');
+  const nextBtn = document.getElementById('tourNextBtn');
+  const prevBtn = document.getElementById('tourPrevBtn');
+
+  if (prevBtn) prevBtn.style.visibility = step === 1 ? 'hidden' : 'visible';
+
+  if (step === 1) {
+    switchFeature('send');
+    if (tag) tag.textContent = 'Step 1 of 4 • 0:00–0:15';
+    if (title) title.textContent = 'The Problem: 44-Character Hash Panic';
+    if (desc) desc.textContent = 'In India, 400M+ people use UPI with verified names and bank ticks. Pasting 44-character strings like 9wFF...7xK2 in Phantom feels like firing a missile blindfolded into the dark.';
+    if (visual) visual.innerHTML = '<strong>Legacy Phantom Flaw:</strong> Raw bytecode instruction dump, unverified recipient, and zero undo window once approved.';
+    if (nextBtn) nextBtn.textContent = 'Next: Send + Undo →';
+  } else if (step === 2) {
+    switchFeature('send');
+    if (tag) tag.textContent = 'Step 2 of 4 • 0:15–0:30';
+    if (title) title.textContent = 'Pillar 1: Send + 10s Pre-Broadcast Undo Window';
+    if (desc) desc.textContent = 'Rakshak introduces verified .sol contact cards, a ₹10 test micro-transfer, and a 10-second client-side buffer pause with an animated countdown ring and prominent Cancel button.';
+    if (visual) visual.innerHTML = '<strong>The Innovation:</strong> A local holding queue gives users a real safety buffer to catch mistakes before irreversible on-chain broadcast.';
+    if (nextBtn) nextBtn.textContent = 'Next: Rakshak Signing →';
+  } else if (step === 3) {
+    switchFeature('signing');
+    if (tag) tag.textContent = 'Step 3 of 4 • 0:30–0:45';
+    if (title) title.textContent = 'Pillar 2: Plain-Language Signing & Rakshak Mode';
+    if (desc) desc.textContent = 'Approvals show plain Give/Get Rupee breakdown (1.50 SOL = 296.85 USDC). Rakshak Mode adds a Hindi/Hinglish copy toggle and opt-in voice readout (🔊 Suniye) to eliminate signing blindness.';
+    if (visual) visual.innerHTML = '<strong>4 Explicit Checks Passed:</strong> Raydium AMM verified • Circle USDC Mint • Exact Simulated Balance • Zero Malicious Delegations.';
+    if (nextBtn) nextBtn.textContent = 'Next: Status & Recovery →';
+  } else if (step === 4) {
+    switchFeature('status');
+    if (tag) tag.textContent = 'Step 4 of 4 • 0:45–1:00';
+    if (title) title.textContent = 'Pillar 3: Confirmed Status, Honest Fee & WhatsApp Receipt';
+    if (desc) desc.textContent = '4-step validator pipeline shows Confirmed in ~400ms. On failure, it transparently discloses that principal never moved (noting ~₹0.08 compute fee), paired with a 1-tap auto-slippage retry and shareable WhatsApp receipt.';
+    if (visual) visual.innerHTML = '<strong>Result:</strong> Zero panic, complete fee transparency, and an intuitive experience tailored for the next 100M Indian users.';
+    if (nextBtn) nextBtn.textContent = 'Finish Tour 🚀';
+  }
+}
+

@@ -84,8 +84,8 @@
   - Annotated Red Callout 3: "Fee shown in lamports (0.000005 SOL) with no Rupee reference"
 * **After Screen (UPI-Simple Solana):**
   - Big prominent fee display: `₹0.08` with subtitle `(0.000005 SOL)`
-  - Educational comparison: "Solana Pay vs Merchant MDR (1.5%–3% card MDR vs ₹0.08 Solana settlement)"
-  - Animated 4-step status timeline: Sent (0.08s) → Broadcast (0.22s) → Validator Slot (0.39s) → Optimistically Confirmed (~400ms) with rooted finality in ~12s
+  - Educational comparison: "Solana vs Bank Transfer (IMPS) Fees (₹2–₹5 IMPS vs ₹0.08 Solana settlement)"
+  - Animated 4-step status timeline: Sent (0.08s) → Broadcast (0.22s) → Validator Slot (0.39s) → Confirmed (~400ms)
   - Honest Peace-of-Mind Guarantee:
     - **"🛡️ NO FUNDS MOVED • PRINCIPAL SAFE"**
     - "Solana transactions are strictly atomic. No funds moved. A small network fee (≈ ₹0.08) may apply for validator compute consumed."

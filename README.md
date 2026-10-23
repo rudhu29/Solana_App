@@ -43,7 +43,7 @@ npx vercel --prod
    - **Signature Moment 2 — 10-Second Pre-Broadcast Undo Window:** Animated circular countdown ring with a prominent **`🛑 UNDO SEND (Cancel)`** button on Send before on-chain broadcast, attacking the #1 crypto fear of sending to the wrong address.
    - **Pillar 1 (Human-First Send):** Quick Contacts avatar carousel, instant amount preset chips (`₹500`, `₹1,000`, `₹2,500`, `₹5,000`, `Max`), contact lookup by `.sol` / alias, verified badges, First-Time Safety Warning card, ₹10 micro-test option, and an interactive **Swipe-to-Pay** slider.
    - **Pillar 2 (Plain-Language Signing):** Real-time Raydium swap simulation with **Safe vs Scam Intercept toggle** with pulsing phone threat aura, side-by-side **Legacy Bytecode Dump toggle**, 4 explicit checks passed, and plain "You Give / You Get" financial breakdowns (1.50 SOL = 296.85 USDC).
-   - **Pillar 3 (Status Recovery & Rupee Fees):** 4-stage validator pipeline with real-time feedback, optimistic confirmation (~400ms) with rooted finality in ~12s, an honest **"🛡️ NO FUNDS MOVED • PRINCIPAL SAFE"** guarantee (openly disclosing the ~₹0.08 validator fee for compute inclusion), and 1-tap retry with auto-adjusted slippage. Upfront gas fee in Rupees (`≈ ₹0.08`), 3 priority speed tiers, and an educational **Solana Pay vs Merchant MDR** comparison.
+   - **Pillar 3 (Status Recovery & Rupee Fees):** 4-stage validator pipeline with real-time feedback, optimistic confirmation (~400ms) with rooted finality in ~12s, an honest **"🛡️ NO FUNDS MOVED • PRINCIPAL SAFE"** guarantee (openly disclosing the ~₹0.08 validator fee for compute inclusion), and 1-tap retry with auto-adjusted slippage. Upfront gas fee in Rupees (`≈ ₹0.08`), 3 priority speed tiers, and an educational **Solana vs Bank Transfer (IMPS) Fees** comparison.
    - **Complementary Touches:** Instant 3-second biometric Passkey login with progressive "Protect Your Wallet" security ring, plus a 1-tap **WhatsApp-Shareable Receipt** for effortless payment verification.
    - **Web Audio Haptic Chimes & Canvas Confetti (`js/audio.js`):** Authentic UPI confirmation chords and micro-haptic sound effects synthesized in pure code (opt-in), coupled with a particle confetti explosion on payment success.
 
@@ -64,7 +64,7 @@ npx vercel --prod
 | :--- | :--- | :--- | :--- |
 | **1. Send + Undo Window** | ~42s verification; intense hesitation | **~11s completion** with .sol handles | 10s cancel buffer cited by all 5 testers as a vital safety cushion |
 | **2. Signing Comprehension** | Bytecode ignored; blind approval guesswork | **Clear comprehension** of Give/Get balance | All 5 testers correctly recited token amounts and 4 checks passed |
-| **3. Fee Understanding** | Lamports confused with large Rupee values | **Instant clarity** with upfront ₹0.08 fee | Removed fee hesitation; compared favorably to merchant card MDR |
+| **3. Fee Understanding** | Lamports confused with large Rupee values | **Instant clarity** with upfront ₹0.08 fee | Removed fee hesitation; compared favorably to ₹2–₹5 bank IMPS fees |
 | **4. Failed Tx Reaction** | Assumption that principal was lost | **Understood atomic rollback** immediately | Testers used 1-tap auto-slippage retry without panic |
 | **5. Onboarding Setup** | Reluctance to write 12 words on paper | **Immediate exploration** via Passkeys | Nudges backup progressively as balances increase |
 

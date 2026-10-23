@@ -373,3 +373,139 @@
 .figma-layer-tree span.token {
   color: var(--sol-emerald);
 }
+
+/* ==========================================================================
+   INTERACTIVE FIGMA CANVAS VIEWER STYLES
+   ========================================================================== */
+.figma-canvas-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.figma-tab-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.figma-tab-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--border-glass);
+}
+
+.figma-tab-btn.active {
+  background: rgba(153, 69, 255, 0.15);
+  border-color: var(--sol-purple);
+  color: #FFFFFF;
+  box-shadow: 0 0 16px rgba(153, 69, 255, 0.25);
+}
+
+.figma-canvas-box {
+  background: #080B14;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 28px;
+}
+
+.figma-canvas-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.figma-frame-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.figma-frame-title h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.figma-dim-badge {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-tertiary);
+}
+
+.figma-artboard-display {
+  background: #0F1322;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-glass);
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+.figma-cover-hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+}
+
+.figma-tokens-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+@media (max-width: 800px) {
+  .figma-tokens-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.token-swatch-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+}
+
+.swatch-color-bar {
+  height: 36px;
+  border-radius: var(--radius-xs);
+  margin-bottom: 10px;
+}
+
+.swatch-meta h6 {
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.swatch-meta p {
+  font-size: 11px;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+}
+
